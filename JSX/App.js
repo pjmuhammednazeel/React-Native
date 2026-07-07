@@ -1,14 +1,29 @@
 import { View, Text } from "react-native";
 
 export default function App(){
-
+const lap="asus";
+const user={
+  name:"nazeel",
+  age:23,
+};
   return(
+    
     <View style={{flex:1,alignItems:"center",justifyContent:"center"}}>
     <Text>HAi</Text>
     <Curly/>
     <Exp/>
     <Info/>
+    <Prop name="Nazeel"/>
+    <Mulprop name="Nazeel"
+              age="23"/>
+    <Dprop name="Nazeel"
+      age="23"/>
+      <Pass tool={lap}/>
+      <PassOb item={user}/>
     </View>
+    
+      
+   
   );
 }
 
@@ -44,4 +59,57 @@ function Info(){
     <Text>{users.name}</Text>
   );
 
+}
+
+//Props:Props (short for properties) are used to pass data from a parent component to a child component.
+
+//Example:1
+
+function Prop(props){
+
+  return(
+      <Text>Hello{props.name}</Text>
+  );
+}
+
+//Example:2 
+
+//Multiple Props
+
+function Mulprop(props){
+return(
+    <View>
+    <Text>Name={props.name}</Text>
+    <Text>Age={props.age}</Text>
+    </View>
+);
+
+}
+
+//Destructuring Props
+
+function Dprop({name,age})
+{
+return(
+  <View>
+  <Text>{name}</Text>
+  <Text>{name,age}</Text>
+  </View>
+);
+
+}
+
+function Pass({tool})
+{
+  return(
+    <Text>{tool}</Text>
+  );
+}
+
+
+function PassOb({item}){
+
+return(
+<Text>{item.name}</Text>
+);
 }
