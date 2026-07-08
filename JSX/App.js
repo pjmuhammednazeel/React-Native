@@ -20,6 +20,10 @@ const user={
       age="23"/>
       <Pass tool={lap}/>
       <PassOb item={user}/>
+      <Reuse name="NAzeel" age="23"/>
+      <Reuse name="rishi" age="22"/>
+      <Reuse name="eldho" age="25"/>
+      
     </View>
     
       
@@ -112,4 +116,17 @@ function PassOb({item}){
 return(
 <Text>{item.name}</Text>
 );
+}
+
+
+//Reuse Components
+
+function Reuse({name,age}){
+
+  return(
+    <View>
+    <Text>Name:{name}</Text>
+    <Text>Age:{age}</Text>
+    </View>
+  );
 }
