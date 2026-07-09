@@ -6,11 +6,13 @@ export default function App() {
 
   const [count,setCount]=useState(0);
   const [name,setName]=useState("Nazeel");
+  const [log,setLog]=useState(false);
 
   return (
     <View style={styles.container}>
       <Text>Count={count}</Text>
       <Text>Name={name}</Text>
+      <Text>{log?"logged in":"logged Out"}</Text>
       <View style={styles.button}>
       <Button  
       title="Increase"
@@ -36,6 +38,12 @@ export default function App() {
     onPress={()=>setName("John")}
     />
 
+    </View>
+    <View style={styles.button}>
+      <Button
+      title="Log"
+      onPress={()=> setLog(!log)}
+      />
     </View>
       
     </View>
