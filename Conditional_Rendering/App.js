@@ -6,6 +6,17 @@ export default function App() {
 
   const[log,setLog]=useState(false);
   const[show,setShow]=useState(false);
+  const [login,setLogin]=useState(false);
+  const [news,setNews]=useState(false);
+
+  let message;
+
+  if(login){
+    message="Welcome";
+  }
+  else{
+    message="Please Login"
+  }
 
   return (
     <View style={styles.container}>
@@ -28,11 +39,44 @@ export default function App() {
 
 
     </View>
+    <View>
+    <Text>{message}</Text>
+    <Button
+
+    title="Press"
+
+    onPress={()=> setLogin(!login)}
+
+/>
+
+
+    </View>
+
+    <View>
+      {news?<Home/>:<Login/>}
+
+      <Button
+
+      title="Toggle"
+      onPress={()=>setNews(!news)}
+
+/>
+
+    </View>
       
     </View>
   );
 }
 
+
+function Login(){
+  return <Text>Login Screen</Text>
+}
+
+function Home()
+{
+  return <Text>Home Screen</Text>
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
