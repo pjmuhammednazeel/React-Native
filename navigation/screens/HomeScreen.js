@@ -8,6 +8,10 @@ export default function HomeScreen({navigation}){
                 title="Profile"
                 onPress={()=> navigation.navigate("Profile")}
             />
+            <Button
+                title="Back"
+                onPress={()=>navigation.goBack()}
+            />
         </View>
     );
 }
