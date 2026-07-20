@@ -1,6 +1,6 @@
 import {View,Text,Button} from "react-native";
 
-export default funtion LoginScreen({navigation}){
+export default function LoginScreen({navigation}){
 
     return (
         <View>
